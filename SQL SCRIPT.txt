@@ -1,0 +1,69 @@
+create DATABASE evalti;
+
+USE evalti;
+CREATE TABLE roles (
+  rol_id TINYINT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(60)
+);
+
+CREATE TABLE usuarios (
+  usuario_id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(40),
+  apellido VARCHAR(40),
+  telefono INT, 
+  direccion VARCHAR(70),
+  correo_electronico VARCHAR(80),
+  fecha_nacimiento DATE, 
+  rol_id TINYINT,
+  activo TINYINT,
+  contrasenia VARCHAR(60),
+  FOREIGN KEY (rol_id) REFERENCES roles (rol_id)
+);
+
+
+USE evalti;
+
+INSERT INTO roles (nombre)
+VALUE ('administrador')
+
+INSERT INTO roles (nombre)
+VALUE ('gerente')
+
+use evalti;
+
+INSERT INTO usuarios (nombre,apellido,telefono, direccion,correo_electronico,fecha_nacimiento, rol_id,activo,contrasenia) values(?,?,?,?,?,?,?,?,?)
+
+use evalti;
+
+INSERT INTO usuarios (nombre,
+  apellido,
+  telefono, 
+  direccion,
+  correo_electronico,
+  fecha_nacimiento, 
+  rol_id,
+  activo,
+  contrasenia)
+  values('Jose H','Pineda M',6546546,'guatemala','jh@gmail.com',19970608,1,1,'asdf')
+
+INSERT INTO usuarios (nombre,
+  apellido,
+  telefono, 
+  direccion,
+  correo_electronico,
+  fecha_nacimiento, 
+  rol_id,
+  activo,
+  contrasenia)
+  values('Mario J','Fernandez J',8978974,'guatemala','mf@gmail.com',19970804,1,1,'asdf')
+
+INSERT INTO usuarios (nombre,
+  apellido,
+  telefono, 
+  direccion,
+  correo_electronico,
+  fecha_nacimiento, 
+  rol_id,
+  activo,
+  contrasenia)
+  values('Pedro M','Martinez M',8978974,'guatemala','mm@gmail.com',19930703,2,1,'asdf')
